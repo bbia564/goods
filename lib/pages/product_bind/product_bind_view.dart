@@ -11,7 +11,7 @@ class ProductBindView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.prohaska.value
+          () => controller.von.value
               ? const CircularProgressIndicator(color: Colors.blueAccent)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class ProductBindView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.pdtxwesa();
+              controller.tfzv();
             },
             icon: const Icon(
               Icons.restart_alt,

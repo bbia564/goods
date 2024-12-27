@@ -7,12 +7,15 @@ import 'package:goods_storage/pages/add_product/add_product_binding.dart';
 import 'package:goods_storage/pages/add_product/add_product_view.dart';
 import 'package:goods_storage/pages/goods_first/goods_first_binding.dart';
 import 'package:goods_storage/pages/goods_first/goods_first_view.dart';
+import 'package:goods_storage/pages/goods_first/goods_water.dart';
 import 'package:goods_storage/pages/goods_second/feedback/feedback_binding.dart';
 import 'package:goods_storage/pages/goods_second/feedback/feedback_view.dart';
 import 'package:goods_storage/pages/goods_second/goods_second_binding.dart';
 import 'package:goods_storage/pages/goods_second/goods_second_view.dart';
 import 'package:goods_storage/pages/goods_tab/goods_tab_binding.dart';
 import 'package:goods_storage/pages/goods_tab/goods_tab_view.dart';
+import 'package:goods_storage/pages/product_bind/product_bind_binding.dart';
+import 'package:goods_storage/pages/product_bind/product_bind_view.dart';
 
 Color primaryColor = const Color(0xff243cfe);
 Color bgColor = Colors.white;
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Goods,
-      initialRoute: '/goodsTab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -83,10 +86,12 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Goods = [
+  GetPage(name: '/', page: () => const ProductBindView(), binding: ProductBindBinding()),
   GetPage(name: '/goodsTab', page: () => GoodsTabPage(), binding: GoodsTabBinding()),
   GetPage(name: '/goodsFirst', page: () => const GoodsFirstPage(), binding: GoodsFirstBinding()),
   GetPage(name: '/goodsSecond', page: () => GoodsSecondPage(), binding: GoodsSecondBinding()),
   GetPage(name: '/addGoods', page: () => AddGoodsPage(), binding: AddGoodsBinding()),
+  GetPage(name: '/product', page: () => const GoodsWater()),
   GetPage(name: '/addProduct', page: () => AddProductPage(), binding: AddProductBinding()),
   GetPage(name: '/feedback', page: () => FeedbackPage(), binding: FeedbackBinding()),
 ];
